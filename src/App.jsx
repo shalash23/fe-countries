@@ -1,21 +1,31 @@
 import React from "react";
-import { Paper, Typography, CssBaseline,Container } from "@mui/material";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { Paper, Typography, CssBaseline,Container,Box,useMediaQuery } from "@mui/material";
+import { createTheme, ThemeProvider,responsiveFontSizes } from "@mui/material/styles";
 import { themeOptions } from "./theme";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
-import CardCountry from "./Layout/CardCountry";
-
+import GridCards from "./Layout/GridCards";
 const App = () => {
-  const theme = createTheme(themeOptions);
+  const [lightMode, setLightMode] = React.useState('dark');
+  const preferredTheme = themeOptions(lightMode)
+  console.log(themeOptions)
+  let theme = createTheme(preferredTheme);
+  theme = responsiveFontSizes(theme)
+  const matches = useMediaQuery(theme.breakpoints.down('sm'))
   return (
     <div className="app">
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <Paper
-          elevation={2}
+          elevation={4}
+          square
           sx={{
-            py: 2,
-            px: 8,
+            py: 5,
+            px: {
+              xs: 1,
+              sm: 2,
+              md: 5,
+              lg: 6,
+            },
             display:'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
@@ -23,18 +33,30 @@ const App = () => {
         >
           <Typography
             component="h1"
-            variant="subtitle1"
+            variant={matches ? 'h6' : 'h5'}
             sx={{
               fontWeight: "800",
-              color:'text.primary'
             }}
           >
             Where in the world?
           </Typography>
-          <DarkModeOutlinedIcon />
+          <Box sx={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            alignContent:'center'
+          }}>
+
+            <DarkModeOutlinedIcon onClick={() => {
+              setLightMode(prevMode => prevMode === 'light' ? 'dark' : 'light');
+          }}/>
+            <Typography component='p' variant='body1' sx={{
+              ml:2
+          }}> Dark Mode</Typography>
+          </Box>
         </Paper>
-        <Container fixed maxWidth={'xs'}>
-            <CardCountry/>
+        <Container fixed maxWidth={'xs'} >
+            <GridCards/>
         </Container>
       </ThemeProvider>
     </div>
