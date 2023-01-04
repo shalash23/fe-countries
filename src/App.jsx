@@ -1,8 +1,9 @@
 import React from "react";
-import { Paper, Typography, CssBaseline } from "@mui/material";
+import { Paper, Typography, CssBaseline,Container } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { themeOptions } from "./theme";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
+import CardCountry from "./Layout/CardCountry";
 
 const App = () => {
   const theme = createTheme(themeOptions);
@@ -14,20 +15,27 @@ const App = () => {
           elevation={2}
           sx={{
             py: 2,
-            px: 1,
+            px: 8,
+            display:'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
           }}
         >
           <Typography
             component="h1"
-            variant="body2"
+            variant="subtitle1"
             sx={{
               fontWeight: "800",
+              color:'text.primary'
             }}
           >
             Where in the world?
           </Typography>
           <DarkModeOutlinedIcon />
         </Paper>
+        <Container fixed maxWidth={'xs'}>
+            <CardCountry/>
+        </Container>
       </ThemeProvider>
     </div>
   );
