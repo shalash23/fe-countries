@@ -2,6 +2,7 @@ import React from "react";
 import { Paper, Typography, CssBaseline } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { themeOptions } from "./theme";
+import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 
 const App = () => {
   const theme = createTheme(themeOptions);
@@ -25,6 +26,7 @@ const App = () => {
           >
             Where in the world?
           </Typography>
+          <DarkModeOutlinedIcon />
         </Paper>
       </ThemeProvider>
     </div>
