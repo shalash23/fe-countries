@@ -1,15 +1,40 @@
 import React, { useContext } from "react";
-import { Grid, CircularProgress } from "@mui/material";
+import { Grid, useMediaQuery, useTheme } from "@mui/material";
 import CardCountry from "./CardCountry";
 import { countriesContext } from "../store/CountriesContext";
 const GridCards = () => {
   const [randomCountries, loading] = useContext(countriesContext);
-  console.log(randomCountries);
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.up("lg"));
 
-  const numFor = Intl.NumberFormat("en-US");
-  const newFor = numFor.format(countries.population);
-
-  return {};
+  return (
+    <Grid
+      container
+      spacing={5}
+      sx={{
+        mb: 5,
+      }}
+    >
+      {randomCountries.map((country) => {
+        return (
+          <React.Fragment key={country.id}>
+            <Grid item xs={matches ? 3 : 12}>
+              <CardCountry
+                id={country.id}
+                name={country.name.common}
+                flag={country.flags.svg}
+                population={Intl.NumberFormat("en-US").format(
+                  country.population
+                )}
+                capital={country.capital[0]}
+                region={country.region[0]}
+              />
+            </Grid>
+          </React.Fragment>
+        );
+      })}
+    </Grid>
+  );
 };
 
 export default GridCards;

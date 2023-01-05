@@ -23,7 +23,7 @@ const App = () => {
   console.log(themeOptions);
   let theme = createTheme(preferredTheme);
   theme = responsiveFontSizes(theme);
-  const matches = useMediaQuery(theme.breakpoints.down("sm"));
+  const matches = useMediaQuery(theme.breakpoints.down("md"));
   return (
     <div className="app">
       <CountriesContextProvider>
@@ -80,12 +80,11 @@ const App = () => {
                   ml: 2,
                 }}
               >
-                {" "}
                 Dark Mode
               </Typography>
             </Box>
           </Paper>
-          <Container fixed maxWidth={"xs"}>
+          <Container maxWidth={matches ? "xs" : "xl"}>
             <GridCards />
           </Container>
         </ThemeProvider>

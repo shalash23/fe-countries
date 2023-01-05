@@ -18,7 +18,7 @@ export const CountriesContextProvider = ({ children }) => {
 
   if (loading) return <div>Loading...</div>;
   const randomCountries = [];
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 8; i++) {
     let randomNumber = Math.floor(Math.random() * allCountries.length);
     randomCountries.push(allCountries[randomNumber]);
     console.log(randomCountries);
