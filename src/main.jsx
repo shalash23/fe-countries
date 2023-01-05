@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
 import "./index.css";
+import CountryPage from "./routes/CountryPage";
 import MainPage from "./routes/MainPage";
 
 const router = createBrowserRouter([
@@ -13,7 +14,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <MainPage />,
-      },
+      }, {
+        path: "/country/:name",
+        element:<CountryPage/>
+      }
     ],
   },
 ]);

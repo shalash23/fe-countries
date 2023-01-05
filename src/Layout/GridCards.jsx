@@ -12,7 +12,8 @@ const GridCards = () => {
       container
       spacing={5}
       sx={{
-        mb: 5,
+          mb: 5,
+        
       }}
     >
       {randomCountries.map((country) => {

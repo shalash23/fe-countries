@@ -1,9 +1,16 @@
 import React from "react";
 import { Card, CardContent, Typography, CardMedia, Box } from "@mui/material";
+import {Link} from 'react-router-dom'
 
 const CardCountry = ({ name, population, flag, region, capital }) => {
   return (
+    <Link to={`country/${name}`} style={{
+      textDecoration:'none'
+    }}>
     <Card
+      onClick={() => {
+        
+      }}
       sx={{
         mt: 12,
         maxWidth: 475,
@@ -116,6 +123,7 @@ const CardCountry = ({ name, population, flag, region, capital }) => {
         </Box>
       </CardContent>
     </Card>
+        </Link>
   );
 };
 
