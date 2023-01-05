@@ -24,6 +24,7 @@ const CardCountry = ({ name, population, flag, region, capital }) => {
       >
         <Typography
           component="h2"
+          noWrap
           variant="h4"
           sx={{
             fontWeight: "800",

@@ -62,29 +62,45 @@ const App = () => {
                 alignContent: "center",
               }}
             >
-              <DarkModeOutlinedIcon
-                fontSize={"large"}
-                sx={{
-                  cursor: "pointer",
-                }}
-                onClick={() => {
-                  setLightMode((prevMode) =>
-                    prevMode === "light" ? "dark" : "light"
-                  );
-                }}
-              />
+              {lightMode === "light" ? (
+                <DarkModeOutlinedIcon
+                  fontSize={"large"}
+                  sx={{
+                    cursor: "pointer",
+                  }}
+                  onClick={() => {
+                    setLightMode((prevMode) =>
+                      prevMode === "light" ? "dark" : "light"
+                    );
+                  }}
+                />
+              ) : (
+                <LightModeOutlinedIcon
+                  fontSize={"large"}
+                  sx={{
+                    cursor: "pointer",
+                  }}
+                  onClick={() => {
+                    setLightMode((prevMode) =>
+                      prevMode === "light" ? "dark" : "light"
+                    );
+                  }}
+                />
+              )}
+
               <Typography
                 component="p"
                 variant="body1"
                 sx={{
                   ml: 2,
+                  textTransform: "capitalize",
                 }}
               >
-                Dark Mode
+                {lightMode} Mode
               </Typography>
             </Box>
           </Paper>
-          <Container maxWidth={matches ? "xs" : "xl"}>
+          <Container maxWidth={matches ? "xs" : "xl"} fixed>
             <GridCards />
           </Container>
         </ThemeProvider>

@@ -27,7 +27,7 @@ const GridCards = () => {
                   country.population
                 )}
                 capital={country.capital[0]}
-                region={country.region[0]}
+                region={country.region}
               />
             </Grid>
           </React.Fragment>
