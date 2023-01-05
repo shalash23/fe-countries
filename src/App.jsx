@@ -3,7 +3,6 @@ import {
   Paper,
   Typography,
   CssBaseline,
-  Container,
   Box,
   useMediaQuery,
 } from "@mui/material";
@@ -12,10 +11,10 @@ import {
   ThemeProvider,
   responsiveFontSizes,
 } from "@mui/material/styles";
+import { Outlet } from "react-router-dom";
 import { themeOptions } from "./theme";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
-import GridCards from "./Layout/GridCards";
 import { CountriesContextProvider } from "./store/CountriesContext";
 const App = () => {
   const [lightMode, setLightMode] = React.useState("light");
@@ -100,9 +99,7 @@ const App = () => {
               </Typography>
             </Box>
           </Paper>
-          <Container maxWidth={matches ? "xs" : "xl"} fixed>
-            <GridCards />
-          </Container>
+          <Outlet />
         </ThemeProvider>
       </CountriesContextProvider>
     </div>

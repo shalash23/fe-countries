@@ -25,7 +25,7 @@ export const CountriesContextProvider = ({ children }) => {
   }
 
   return (
-    <countriesContext.Provider value={[randomCountries, loading]}>
+    <countriesContext.Provider value={[randomCountries, allCountries]}>
       {children}
     </countriesContext.Provider>
   );
