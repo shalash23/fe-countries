@@ -17,14 +17,30 @@ const Country = ({ countryParams }) => {
 
   return (
     <>
-      <Grid item xs={12}>
+      <Grid
+        item
+        sx={{
+          gridRow: "1 / 3",
+          height: "100%",
+        }}
+      >
         <img
           src={countryParams.flags.svg}
           alt={`flag of ${countryParams.name.common}`}
           style={{
             width: "100%",
+            height: "100%",
+            objectFit: "fill",
           }}
         />
+      </Grid>
+
+      <Grid
+        item
+        sx={{
+          width: "100%",
+        }}
+      >
         <Typography
           component="h4"
           variant="h4"
@@ -34,14 +50,6 @@ const Country = ({ countryParams }) => {
         >
           {countryParams.name.official}
         </Typography>
-      </Grid>
-      <Grid
-        item
-        xs={12}
-        sx={{
-          width: "100%",
-        }}
-      >
         <Box
           sx={{
             display: "flex",
@@ -161,7 +169,7 @@ const Country = ({ countryParams }) => {
       </Grid>
       <Grid
         item
-        xs={12}
+        md={3}
         sx={{
           width: "100%",
           mt: 4,
@@ -229,41 +237,44 @@ const Country = ({ countryParams }) => {
             Languages:
           </Typography>
 
-          {Object.keys(countryParams.languages).map((language, idx, arr) => {
-            return idx === arr.length - 1 ? (
-              <Typography
-                component="p"
-                variant="h6"
-                color="text.main"
-                sx={{
-                  opacity: "0.8",
-                  ml: 1,
-                }}
-              >
-                {countryParams.languages[language]}
-              </Typography>
-            ) : (
-              <Typography
-                component="p"
-                variant="h6"
-                color="text.main"
-                sx={{
-                  opacity: "0.8",
-                  ml: 1,
-                }}
-              >
-                {countryParams.languages[language]},
-              </Typography>
-            );
-          })}
+          {Object.keys(countryParams.languages)
+            .slice(3)
+            .map((language, idx, arr) => {
+              return idx === arr.length - 1 ? (
+                <Typography
+                  component="p"
+                  variant="h6"
+                  color="text.main"
+                  sx={{
+                    opacity: "0.8",
+                    ml: 1,
+                  }}
+                >
+                  {countryParams.languages[language]}
+                </Typography>
+              ) : (
+                <Typography
+                  component="p"
+                  variant="h6"
+                  color="text.main"
+                  sx={{
+                    opacity: "0.8",
+                    ml: 1,
+                  }}
+                >
+                  {countryParams.languages[language]},
+                </Typography>
+              );
+            })}
         </Box>
       </Grid>
       <Grid
         item
-        xs={12}
+        md={3}
         sx={{
           width: "100%",
           mt: 4,
+          gridColumn: "2 / 4",
         }}
       >
         <Box

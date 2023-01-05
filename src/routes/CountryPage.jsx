@@ -7,12 +7,10 @@ import Country from "../Layout/Country";
 
 const CountryPage = () => {
   const [_, allCountries] = React.useContext(countriesContext);
-  console.log(allCountries);
   const { name } = useParams();
   const countryParams = allCountries.filter(
     (country) => country.name.common === name
   )[0];
-  console.log(countryParams);
   return (
     <>
       <Container
@@ -38,15 +36,21 @@ const CountryPage = () => {
           </Button>
         </Link>
         <Grid
-          container
-          direction="column"
-          justifyContent="space-evenly"
-          alignItems="center"
-          xs={12}
-          spacing={1}
           sx={{
             m: "auto",
-            p: 2,
+            p: { xs: 2, lg: 0 },
+            display: "grid",
+            gridTemplateColumns: {
+              xs: "1fr",
+              lg: "repeat(3,1fr)",
+            },
+            gridTemplateRows: {
+              xs: "auto",
+              lg: "1fr 0.5fr",
+            },
+            alignItems: "center",
+            justifyContent: "center",
+            columnGap: 5,
           }}
         >
           <Country countryParams={countryParams} />
