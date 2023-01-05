@@ -17,7 +17,7 @@ const GridCards = () => {
     >
       {randomCountries.map((country) => {
         return (
-          <React.Fragment key={country.id}>
+          <React.Fragment key={country.cca3}>
             <Grid item xs={matches ? 3 : 12}>
               <CardCountry
                 id={country.id}

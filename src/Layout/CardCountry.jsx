@@ -1,6 +1,5 @@
 import React from "react";
 import { Card, CardContent, Typography, CardMedia, Box } from "@mui/material";
-import image from "../../eg.svg";
 
 const CardCountry = ({ name, population, flag, region, capital }) => {
   return (
