@@ -16,26 +16,27 @@ import { themeOptions } from "./theme";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
 import { CountriesContextProvider } from "./store/CountriesContext";
+import ScrollToTop from "./helpers/ScrollToTop";
 const App = () => {
-  const [lightMode, setLightMode] = React.useState("light");
+  const [lightMode, setLightMode] = React.useState("dark");
   const preferredTheme = themeOptions(lightMode);
-  console.log(themeOptions);
   let theme = createTheme(preferredTheme);
   theme = responsiveFontSizes(theme);
   const matches = useMediaQuery(theme.breakpoints.down("md"));
+  ScrollToTop();
   return (
     <div className="app">
       <CountriesContextProvider>
         <ThemeProvider theme={theme}>
           <CssBaseline />
           <Paper
-            elevation={4}
+            elevation={2}
             square
             sx={{
               py: 5,
               px: {
-                xs: 1,
-                sm: 2,
+                xs: 2,
+                sm: 3,
                 md: 5,
                 lg: 6,
               },
@@ -46,7 +47,7 @@ const App = () => {
           >
             <Typography
               component="h1"
-              variant={matches ? "h6" : "h5"}
+              variant={matches ? "body1" : "h5"}
               sx={{
                 fontWeight: "800",
               }}
@@ -63,7 +64,7 @@ const App = () => {
             >
               {lightMode === "light" ? (
                 <DarkModeOutlinedIcon
-                  fontSize={"large"}
+                  fontSize={matches ? "small" : "medium"}
                   sx={{
                     cursor: "pointer",
                   }}
@@ -75,7 +76,7 @@ const App = () => {
                 />
               ) : (
                 <LightModeOutlinedIcon
-                  fontSize={"large"}
+                  fontSize={matches ? "small" : "large"}
                   sx={{
                     cursor: "pointer",
                   }}
@@ -89,7 +90,7 @@ const App = () => {
 
               <Typography
                 component="p"
-                variant="body1"
+                variant={matches ? "subtitle2" : "body1"}
                 sx={{
                   ml: 2,
                   textTransform: "capitalize",

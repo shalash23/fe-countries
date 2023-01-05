@@ -5,6 +5,7 @@ import App from "./App";
 import "./index.css";
 import CountryPage from "./routes/CountryPage";
 import MainPage from "./routes/MainPage";
+import ScrollToTop from "./helpers/ScrollToTop";
 
 const router = createBrowserRouter([
   {
@@ -14,16 +15,19 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <MainPage />,
-      }, {
+      },
+      {
         path: "/country/:name",
-        element:<CountryPage/>
-      }
+        element: <CountryPage />,
+      },
     ],
   },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <RouterProvider router={router}>
+      <ScrollToTop />
+    </RouterProvider>
   </React.StrictMode>
 );
