@@ -14,6 +14,7 @@ const Country = ({ countryParams }) => {
       borderCountries.push(allCountries[property].name.common);
     }
   }
+  console.log(countryParams.languages);
 
   return (
     <>
@@ -35,11 +36,8 @@ const Country = ({ countryParams }) => {
           alt={`flag of ${countryParams.name.common}`}
           style={{
             width: "100%",
-            minWidth: "300px",
 
             height: "100%",
-            objectFit: "fill",
-            aspectRatio: "1 / 1",
             imageRendering: "auto",
           }}
         />
@@ -62,7 +60,14 @@ const Country = ({ countryParams }) => {
           component="h4"
           variant="h4"
           sx={{
-            my: 7,
+            mb: {
+              xs: 4,
+              lg: 2,
+            },
+            mt: {
+              xs: 4,
+              lg: 0,
+            },
           }}
         >
           {countryParams.name.official}
@@ -204,7 +209,7 @@ const Country = ({ countryParams }) => {
             display: "flex",
             justifyContent: "flex-start",
             alignItems: "center",
-            mt: 1,
+            mt: 4,
           }}
         >
           <Typography component="p" variant="h6" color="text.main">
@@ -263,7 +268,7 @@ const Country = ({ countryParams }) => {
           </Typography>
 
           {Object.keys(countryParams.languages)
-            .slice(3)
+            .slice(0, 3)
             .map((language, idx, arr) => {
               return idx === arr.length - 1 ? (
                 <Typography
@@ -298,7 +303,7 @@ const Country = ({ countryParams }) => {
         md={3}
         sx={{
           width: "100%",
-          mt: 4,
+          mt: 3,
           gridColumn: { lg: "2 / 4" },
           gridRow: { xs: "4", lg: "2 / 3" },
         }}
@@ -308,7 +313,6 @@ const Country = ({ countryParams }) => {
             display: "flex",
             justifyContent: "flex-start",
             alignItems: "center",
-            mt: 1,
           }}
         >
           <Typography component="h5" variant="h5">
@@ -319,8 +323,8 @@ const Country = ({ countryParams }) => {
           sx={{
             display: "flex",
             justifyContent: "flex-start",
-            alignItems: "center",
-            mt: 3,
+            alignItems: "flex-start",
+            mt: 2,
             gap: 2,
             flexWrap: "wrap",
           }}

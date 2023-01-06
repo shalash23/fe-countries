@@ -1,129 +1,133 @@
 import React from "react";
 import { Card, CardContent, Typography, CardMedia, Box } from "@mui/material";
-import {Link} from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 const CardCountry = ({ name, population, flag, region, capital }) => {
   return (
-    <Link to={`country/${name}`} style={{
-      textDecoration:'none'
-    }}>
-    <Card
-      onClick={() => {
-        
-      }}
-      sx={{
-        mt: 12,
-        maxWidth: 475,
+    <Link
+      to={`country/${name}`}
+      style={{
+        textDecoration: "none",
       }}
     >
-      <CardMedia
-        title="Countrty Flag"
-        image={flag}
+      <Card
+        onClick={() => {}}
         sx={{
-          height: 240,
-        }}
-      />
-      <CardContent
-        sx={{
-          px: 3,
+          mt: 12,
+          maxWidth: 475,
         }}
       >
-        <Typography
-          component="h2"
-          noWrap
-          variant="h4"
+        <CardMedia
+          title="Countrty Flag"
+          image={flag}
           sx={{
-            fontWeight: "800",
-            mb: 2,
+            height: 240,
           }}
-        >
-          {name}
-        </Typography>
-        <Box
+        />
+        <CardContent
           sx={{
-            display: "flex",
-            justifyContent: "flex-start",
-            alignItems: "center",
-            alignContent: "center",
+            px: 3,
           }}
         >
           <Typography
-            component="p"
-            variant="h6"
-            color="text.primary"
+            component="h2"
+            noWrap
+            variant="h4"
             sx={{
-              fontWeight: "300",
-              mr: 1,
+              fontWeight: "800",
+              mb: 2,
             }}
           >
-            Population:
+            {name}
           </Typography>
-          <Typography
-            component="h3"
-            variant="h6"
-            color="text.primary"
-            sx={{ fontWeight: "300", opacity: "0.8" }}
-          >
-            {population}
-          </Typography>
-        </Box>
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "flex-start",
-            alignItems: "center",
-          }}
-        >
-          <Typography
-            component="p"
-            variant="h6"
-            color="text.primary"
+          <Box
             sx={{
-              fontWeight: "300",
-              mr: 1,
+              display: "flex",
+              justifyContent: "flex-start",
+              alignItems: "center",
+              alignContent: "center",
             }}
           >
-            Region:
-          </Typography>
-          <Typography
-            component="h3"
-            variant="h6"
-            color="text.primary"
-            sx={{ fontWeight: "300", opacity: "0.8" }}
-          >
-            {region}
-          </Typography>
-        </Box>
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "flex-start",
-            alignItems: "center",
-          }}
-        >
-          <Typography
-            component="h3"
-            variant="h6"
-            color="text.primary"
+            <Typography
+              component="p"
+              variant="h6"
+              color="text.primary"
+              sx={{
+                fontWeight: "300",
+                mr: 1,
+              }}
+            >
+              Population:
+            </Typography>
+            <Typography
+              component="h3"
+              variant="h6"
+              noWrap
+              color="text.primary"
+              sx={{ fontWeight: "300", opacity: "0.8" }}
+            >
+              {population}
+            </Typography>
+          </Box>
+          <Box
             sx={{
-              fontWeight: "300",
-              mr: 1,
+              display: "flex",
+              justifyContent: "flex-start",
+              alignItems: "center",
             }}
           >
-            Capital:
-          </Typography>
-          <Typography
-            component="p"
-            variant="h6"
-            color="text.primary"
-            sx={{ fontWeight: "300", opacity: "0.8" }}
+            <Typography
+              component="p"
+              variant="h6"
+              color="text.primary"
+              sx={{
+                fontWeight: "300",
+                mr: 1,
+              }}
+            >
+              Region:
+            </Typography>
+            <Typography
+              component="h3"
+              variant="h6"
+              color="text.primary"
+              sx={{ fontWeight: "300", opacity: "0.8" }}
+              noWrap
+            >
+              {region}
+            </Typography>
+          </Box>
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "flex-start",
+              alignItems: "center",
+            }}
           >
-            {capital}
-          </Typography>
-        </Box>
-      </CardContent>
-    </Card>
-        </Link>
+            <Typography
+              component="h3"
+              variant="h6"
+              color="text.primary"
+              sx={{
+                fontWeight: "300",
+                mr: 1,
+              }}
+            >
+              Capital:
+            </Typography>
+            <Typography
+              component="p"
+              variant="h6"
+              noWrap
+              color="text.primary"
+              sx={{ fontWeight: "300", opacity: "0.8" }}
+            >
+              {capital}
+            </Typography>
+          </Box>
+        </CardContent>
+      </Card>
+    </Link>
   );
 };
 

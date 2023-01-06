@@ -48,9 +48,9 @@ const CountryPage = () => {
             gridTemplateRows: {
               xs: "1fr",
               md: "1fr",
-              lg: "1fr 0.5fr",
+              lg: "1fr",
             },
-            alignItems: "flex-end",
+            alignItems: "flex-start",
             justifyContent: "center",
             columnGap: 5,
           }}
