@@ -1,7 +1,7 @@
 import React from "react";
 import { countriesContext } from "../store/CountriesContext";
 import KeyboardBackspaceRoundedIcon from "@mui/icons-material/KeyboardBackspaceRounded";
-import { Container, Typography, Grid, Button } from "@mui/material";
+import { Container, Grid, Button } from "@mui/material";
 import { useParams, Link } from "react-router-dom";
 import Country from "../Layout/Country";
 
