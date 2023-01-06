@@ -20,8 +20,14 @@ const Country = ({ countryParams }) => {
       <Grid
         item
         sx={{
-          gridRow: "1 / 3",
-          height: "100%",
+          gridRow: {
+            xs: "1",
+            lg: "1 /3 ",
+          },
+          gridColumn: {
+            xs: "1",
+            lg: "1",
+          },
         }}
       >
         <img
@@ -29,8 +35,12 @@ const Country = ({ countryParams }) => {
           alt={`flag of ${countryParams.name.common}`}
           style={{
             width: "100%",
+            minWidth: "300px",
+
             height: "100%",
             objectFit: "fill",
+            aspectRatio: "1 / 1",
+            imageRendering: "auto",
           }}
         />
       </Grid>
@@ -39,6 +49,13 @@ const Country = ({ countryParams }) => {
         item
         sx={{
           width: "100%",
+          gridRow: {
+            xs: "2",
+            lg: "1",
+          },
+          gridColumn: {
+            lg: "2 / 3",
+          },
         }}
       >
         <Typography
@@ -173,6 +190,13 @@ const Country = ({ countryParams }) => {
         sx={{
           width: "100%",
           mt: 4,
+          gridRow: {
+            xs: "3",
+            lg: "1",
+          },
+          gridColumn: {
+            lg: "3",
+          },
         }}
       >
         <Box
@@ -214,6 +238,7 @@ const Country = ({ countryParams }) => {
             component="p"
             variant="h6"
             color="text.main"
+            noWrap
             sx={{
               opacity: "0.8",
               ml: 1,
@@ -274,7 +299,8 @@ const Country = ({ countryParams }) => {
         sx={{
           width: "100%",
           mt: 4,
-          gridColumn: "2 / 4",
+          gridColumn: { lg: "2 / 4" },
+          gridRow: { xs: "4", lg: "2 / 3" },
         }}
       >
         <Box
@@ -299,10 +325,10 @@ const Country = ({ countryParams }) => {
             flexWrap: "wrap",
           }}
         >
-          {borderCountries.map((country) => {
+          {borderCountries.slice(0, 3).map((country) => {
             return (
               <Link
-                style={{ textTransform: "none" }}
+                style={{ textDecoration: "none" }}
                 to={`../country/${country}`}
                 preventScrollReset={true}
               >

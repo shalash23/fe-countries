@@ -42,13 +42,15 @@ const CountryPage = () => {
             display: "grid",
             gridTemplateColumns: {
               xs: "1fr",
+              md: "1fr",
               lg: "repeat(3,1fr)",
             },
             gridTemplateRows: {
-              xs: "auto",
+              xs: "1fr",
+              md: "1fr",
               lg: "1fr 0.5fr",
             },
-            alignItems: "center",
+            alignItems: "flex-end",
             justifyContent: "center",
             columnGap: 5,
           }}
