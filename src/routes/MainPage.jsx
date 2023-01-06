@@ -1,6 +1,7 @@
 import React from "react";
 import { useTheme, useMediaQuery, Container } from "@mui/material";
 import GridCards from "../Layout/GridCards";
+import { getCountries } from "../helpers/getData";
 const MainPage = () => {
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down("md"));
@@ -12,3 +13,8 @@ const MainPage = () => {
 };
 
 export default MainPage;
+
+export async function loader() {
+  const countries = await getCountries();
+  return { countries };
+}

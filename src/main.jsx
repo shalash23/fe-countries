@@ -4,13 +4,16 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
 import "./index.css";
 import CountryPage from "./routes/CountryPage";
-import MainPage from "./routes/MainPage";
+import MainPage, { loader as countriesLoader } from "./routes/MainPage";
 import ScrollToTop from "./helpers/ScrollToTop";
+import ErrorPage from "./routes/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    errorElement: <ErrorPage />,
+    loader: countriesLoader,
     children: [
       {
         path: "/",
