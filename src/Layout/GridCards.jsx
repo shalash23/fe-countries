@@ -10,15 +10,14 @@ const GridCards = () => {
   return (
     <Grid
       container
-      spacing={5}
+      spacing={6}
       sx={{
-          mb: 5,
-        
+        mb: 5,
       }}
     >
       {randomCountries.map((country) => {
         return (
-          <React.Fragment key={country.cca3}>
+          <React.Fragment key={country.area}>
             <Grid item xs={matches ? 3 : 12}>
               <CardCountry
                 id={country.id}

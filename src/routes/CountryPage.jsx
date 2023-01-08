@@ -4,6 +4,7 @@ import KeyboardBackspaceRoundedIcon from "@mui/icons-material/KeyboardBackspaceR
 import { Container, Grid, Button } from "@mui/material";
 import { useParams, Link } from "react-router-dom";
 import Country from "../Layout/Country";
+import AnimatedPage from "../Layout/AnimatedPage";
 
 const CountryPage = () => {
   const [_, allCountries] = React.useContext(countriesContext);
@@ -12,7 +13,7 @@ const CountryPage = () => {
     (country) => country.name.common === name
   )[0];
   return (
-    <>
+    <AnimatedPage>
       <Container
         fixed
         maxWidth={false}
@@ -58,7 +59,7 @@ const CountryPage = () => {
           <Country countryParams={countryParams} />
         </Grid>
       </Container>
-    </>
+    </AnimatedPage>
   );
 };
 

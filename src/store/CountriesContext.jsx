@@ -6,6 +6,8 @@ export const randomCountriesContext = createContext(null);
 
 export const CountriesContextProvider = ({ children }) => {
   const { countries } = useLoaderData();
+
+  console.log(countries);
   const [allCountries, setAllCountries] = useState(countries);
 
   const randomCountries = [];
