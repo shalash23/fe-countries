@@ -11,7 +11,6 @@ const CardCountry = ({ name, population, flag, region, capital }) => {
       }}
     >
       <Card
-        onClick={() => {}}
         sx={{
           mt: 12,
           maxWidth: 475,
