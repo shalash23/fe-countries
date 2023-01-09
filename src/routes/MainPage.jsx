@@ -13,6 +13,7 @@ const MainPage = () => {
       <Container maxWidth={matches ? "xs" : "xl"}>
         <Box
           sx={{
+            px: 3,
             display: {
               xs: "block",
               lg: "flex",
@@ -21,7 +22,7 @@ const MainPage = () => {
               lg: "space-between",
             },
             alignItems: {
-              lg: "flex-end",
+              lg: "center",
             },
             mt: 3,
           }}

@@ -6,8 +6,6 @@ export default function SearchBar() {
     <FormControl
       variant="filled"
       sx={{
-        mb: 3,
-        border: "1px solid text.primary",
         width: {
           xs: "100%",
           md: "50%",
