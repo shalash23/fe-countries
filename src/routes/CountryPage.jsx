@@ -8,10 +8,12 @@ import AnimatedPage from "../Layout/AnimatedPage";
 
 const CountryPage = () => {
   const [_, allCountries] = React.useContext(countriesContext);
-  const { name } = useParams();
+  const { area } = useParams();
+  console.log(area);
   const countryParams = allCountries.filter(
-    (country) => country.name.common === name
+    (country) => country.area === +area
   )[0];
+  console.log(countryParams);
   return (
     <AnimatedPage>
       <Container

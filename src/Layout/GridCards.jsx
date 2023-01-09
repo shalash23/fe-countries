@@ -28,6 +28,7 @@ const GridCards = () => {
                 )}
                 capital={country.capital[0]}
                 region={country.region}
+                area={country.area}
               />
             </Grid>
           </React.Fragment>

@@ -2,10 +2,10 @@ import React from "react";
 import { Card, CardContent, Typography, CardMedia, Box } from "@mui/material";
 import { Link } from "react-router-dom";
 
-const CardCountry = ({ name, population, flag, region, capital }) => {
+const CardCountry = ({ name, population, flag, region, capital, area }) => {
   return (
     <Link
-      to={`country/${name}`}
+      to={`country/${area}`}
       style={{
         textDecoration: "none",
       }}

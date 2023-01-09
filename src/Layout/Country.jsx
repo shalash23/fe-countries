@@ -11,7 +11,10 @@ const Country = ({ countryParams }) => {
   for (const property in allCountries) {
     const border = allCountries[property].cca3;
     if (borders.includes(border)) {
-      borderCountries.push(allCountries[property].name.common);
+      borderCountries.push({
+        area: allCountries[property].area,
+        name: allCountries[property].name.common,
+      });
     }
   }
   console.log(countryParams.languages);
@@ -331,21 +334,23 @@ const Country = ({ countryParams }) => {
         >
           {borderCountries.slice(0, 3).map((country) => {
             return (
-              <Link
-                style={{ textDecoration: "none" }}
-                to={`../country/${country}`}
-                preventScrollReset={true}
-              >
-                <Button
-                  variant="contained"
-                  sx={{
-                    backgroundColor: "background.paper",
-                    color: "text.primary",
-                  }}
+              <React.Fragment key={country.area}>
+                <Link
+                  style={{ textDecoration: "none" }}
+                  to={`../country/${country.area}`}
+                  preventScrollReset={true}
                 >
-                  {country}
-                </Button>
-              </Link>
+                  <Button
+                    variant="contained"
+                    sx={{
+                      backgroundColor: "background.paper",
+                      color: "text.primary",
+                    }}
+                  >
+                    {country.name}
+                  </Button>
+                </Link>
+              </React.Fragment>
             );
           })}
         </Box>
