@@ -73,7 +73,7 @@ const Country = ({ countryParams }) => {
             },
           }}
         >
-          {countryParams.name.official}
+          {countryParams.name.common}
         </Typography>
         <Box
           sx={{
@@ -274,29 +274,33 @@ const Country = ({ countryParams }) => {
             .slice(0, 3)
             .map((language, idx, arr) => {
               return idx === arr.length - 1 ? (
-                <Typography
-                  component="p"
-                  variant="h6"
-                  color="text.main"
-                  sx={{
-                    opacity: "0.8",
-                    ml: 1,
-                  }}
-                >
-                  {countryParams.languages[language]}
-                </Typography>
+                <React.Fragment key={countryParams.languages[language]}>
+                  <Typography
+                    component="p"
+                    variant="h6"
+                    color="text.main"
+                    sx={{
+                      opacity: "0.8",
+                      ml: 1,
+                    }}
+                  >
+                    {countryParams.languages[language]}
+                  </Typography>
+                </React.Fragment>
               ) : (
-                <Typography
-                  component="p"
-                  variant="h6"
-                  color="text.main"
-                  sx={{
-                    opacity: "0.8",
-                    ml: 1,
-                  }}
-                >
-                  {countryParams.languages[language]},
-                </Typography>
+                <React.Fragment key={countryParams.languages[language]}>
+                  <Typography
+                    component="p"
+                    variant="h6"
+                    color="text.main"
+                    sx={{
+                      opacity: "0.8",
+                      ml: 1,
+                    }}
+                  >
+                    {countryParams.languages[language]},
+                  </Typography>
+                </React.Fragment>
               );
             })}
         </Box>
