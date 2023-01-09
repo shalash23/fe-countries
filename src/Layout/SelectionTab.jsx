@@ -19,10 +19,9 @@ export default function SelectionTab() {
     <Paper
       sx={{
         minWidth: {
-          xs: 50,
+          xs: 100,
           lg: 150,
         },
-        maxWidth: "auto",
       }}
     >
       <FormControl fullWidth>
