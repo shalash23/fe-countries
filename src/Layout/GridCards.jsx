@@ -5,7 +5,7 @@ import { countriesContext } from "../store/CountriesContext";
 import AnimatedPage from "./AnimatedPage";
 import { AnimatePresence } from "framer-motion";
 const GridCards = () => {
-  const [randomCountries, loading] = useContext(countriesContext);
+  const [randomCountries] = useContext(countriesContext);
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.up("lg"));
 

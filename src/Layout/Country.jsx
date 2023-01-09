@@ -24,13 +24,12 @@ const Country = ({ countryParams }) => {
     }
     return borderCountry;
   }, [borders]);
-  console.log(borderCountries);
 
   return (
     <>
       <Grid
         component={motion.div}
-        initial={{ opacity: 0, x: -100 }}
+        initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
         exit={{ opacity: 0, x: 100 }}
         item
@@ -45,7 +44,14 @@ const Country = ({ countryParams }) => {
           },
         }}
       >
-        <img
+        <motion.img
+          inital={{ y: -50, opacity: 0, x: 100 }}
+          animate={{ y: 0, opacity: 1, x: 0 }}
+          exit={{
+            y: 50,
+            opacity: 0,
+            x: -50,
+          }}
           src={countryParams.flags.svg}
           alt={`flag of ${countryParams.name.common}`}
           style={{

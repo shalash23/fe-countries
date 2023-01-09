@@ -30,7 +30,6 @@ export default function SelectionTab() {
           label="Region"
           value={search}
           onChange={handleChange}
-          shrink={false}
         >
           <MenuItem value={"All"}>All</MenuItem>
           <MenuItem value={"Africa"}>Africa</MenuItem>

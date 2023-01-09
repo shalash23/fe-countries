@@ -1,7 +1,14 @@
-import { InputAdornment, InputLabel, Input, FormControl } from "@mui/material";
+import { InputAdornment, Input, FormControl } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
+import { queryContext } from "../store/CountriesContext";
+import { useContext } from "react";
 
 export default function SearchBar() {
+  const [query, setQuery] = useContext(queryContext);
+  const handleChange = (e) => {
+    setQuery(e.target.value);
+  };
+  console.log(query);
   return (
     <FormControl
       variant="filled"
@@ -15,6 +22,7 @@ export default function SearchBar() {
       <Input
         id="input-search-country"
         placeholder="Search for a Country"
+        onChange={handleChange}
         startAdornment={
           <InputAdornment position="start">
             <SearchIcon
