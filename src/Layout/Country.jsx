@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { Box, Grid, Typography, Button } from "@mui/material";
 import { useContext } from "react";
 import { countriesContext } from "../store/CountriesContext";
@@ -6,18 +6,24 @@ import { Link } from "react-router-dom";
 
 const Country = ({ countryParams }) => {
   const { borders } = countryParams;
+
   const [_, allCountries] = useContext(countriesContext);
-  const borderCountries = [];
-  for (const property in allCountries) {
-    const border = allCountries[property].cca3;
-    if (borders.includes(border)) {
-      borderCountries.push({
-        area: allCountries[property].area,
-        name: allCountries[property].name.common,
-      });
+  const borderCountries = useMemo(() => {
+    const borderCountry = [];
+
+    for (const property in allCountries) {
+      if (!borders) return;
+      const border = allCountries[property].cca3;
+      if (borders.includes(border)) {
+        borderCountry.push({
+          area: allCountries[property].area,
+          name: allCountries[property].name.common,
+        });
+      }
     }
-  }
-  console.log(countryParams.languages);
+    return borderCountry;
+  }, [borders]);
+  console.log(borderCountries);
 
   return (
     <>
@@ -336,27 +342,45 @@ const Country = ({ countryParams }) => {
             flexWrap: "wrap",
           }}
         >
-          {borderCountries.slice(0, 3).map((country) => {
-            return (
-              <React.Fragment key={country.area}>
-                <Link
-                  style={{ textDecoration: "none" }}
-                  to={`../country/${country.area}`}
-                  preventScrollReset={true}
-                >
-                  <Button
-                    variant="contained"
-                    sx={{
-                      backgroundColor: "background.paper",
-                      color: "text.primary",
-                    }}
+          {borderCountries ? (
+            borderCountries.slice(0, 3).map((country) => {
+              return (
+                <React.Fragment key={country.area}>
+                  <Link
+                    style={{ textDecoration: "none" }}
+                    to={`../country/${country.area}`}
+                    preventScrollReset={true}
                   >
-                    {country.name}
-                  </Button>
-                </Link>
-              </React.Fragment>
-            );
-          })}
+                    <Button
+                      variant="contained"
+                      sx={{
+                        backgroundColor: "background.paper",
+                        color: "text.primary",
+                      }}
+                    >
+                      {country.name}
+                    </Button>
+                  </Link>
+                </React.Fragment>
+              );
+            })
+          ) : (
+            <Link
+              style={{ textDecoration: "none" }}
+              to={`../`}
+              preventScrollReset={true}
+            >
+              <Button
+                variant="contained"
+                sx={{
+                  backgroundColor: "background.paper",
+                  color: "text.primary",
+                }}
+              >
+                No Bordering Countries - Go Back
+              </Button>
+            </Link>
+          )}
         </Box>
       </Grid>
     </>

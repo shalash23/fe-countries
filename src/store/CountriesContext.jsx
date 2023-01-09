@@ -42,6 +42,8 @@ export const CountriesContextProvider = ({ children }) => {
     return randomCountry;
   }, [search]);
 
+  console.log(randomCountries);
+
   return (
     <countriesContext.Provider value={[randomCountries, allCountries]}>
       <searchContext.Provider value={[search, setSearch]}>

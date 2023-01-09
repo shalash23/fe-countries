@@ -10,7 +10,7 @@ export default function SearchBar() {
         border: "1px solid text.primary",
         width: {
           xs: "100%",
-          md: "30%",
+          md: "50%",
         },
       }}
     >

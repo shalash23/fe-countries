@@ -3,6 +3,7 @@ import { Card, CardContent, Typography, CardMedia, Box } from "@mui/material";
 import { Link } from "react-router-dom";
 
 const CardCountry = ({ name, population, flag, region, capital, area }) => {
+  console.log(capital);
   return (
     <Link
       to={`country/${area}`}

@@ -20,7 +20,7 @@ export default function SelectionTab() {
       sx={{
         minWidth: {
           xs: 50,
-          lg: 200,
+          lg: 150,
         },
         maxWidth: "auto",
       }}

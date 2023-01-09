@@ -21,7 +21,7 @@ const MainPage = () => {
               lg: "space-between",
             },
             alignItems: {
-              lg: "center",
+              lg: "flex-end",
             },
             mt: 3,
           }}
