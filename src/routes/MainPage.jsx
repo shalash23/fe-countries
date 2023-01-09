@@ -10,7 +10,7 @@ const MainPage = () => {
   const matches = useMediaQuery(theme.breakpoints.down("md"));
   return (
     <AnimatedPage>
-      <Container maxWidth={matches ? "xs" : "xl"}>
+      <Container maxWidth={matches ? "xs" : "xl"} fixed>
         <Box
           sx={{
             px: 3,

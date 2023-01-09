@@ -4,9 +4,8 @@ import { useState } from "react";
 export default function AnimatedPage({ children }) {
   return (
     <motion.div
-      layout
       initial={{
-        x: 100,
+        x: 30,
         opacity: 0,
       }}
       animate={{
@@ -14,7 +13,7 @@ export default function AnimatedPage({ children }) {
         opacity: 1,
       }}
       exit={{
-        x: -100,
+        x: -30,
         opacity: 0,
       }}
     >
