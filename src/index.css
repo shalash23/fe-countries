@@ -2,3 +2,8 @@
   transition: all 0.3s ease-out;
   /* outline: 1px solid green; */
 }
+
+body {
+  overflow: overlay;
+  padding-right: 1em;
+}

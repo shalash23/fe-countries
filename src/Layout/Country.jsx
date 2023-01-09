@@ -3,6 +3,7 @@ import { Box, Grid, Typography, Button } from "@mui/material";
 import { useContext } from "react";
 import { countriesContext } from "../store/CountriesContext";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const Country = ({ countryParams }) => {
   const { borders } = countryParams;
@@ -28,6 +29,10 @@ const Country = ({ countryParams }) => {
   return (
     <>
       <Grid
+        component={motion.div}
+        initial={{ opacity: 0, x: -100 }}
+        animate={{ opacity: 1, x: 0 }}
+        exit={{ opacity: 0, x: 100 }}
         item
         sx={{
           gridRow: {

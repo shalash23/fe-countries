@@ -1,10 +1,4 @@
-import {
-  FormControl,
-  MenuItem,
-  InputLabel,
-  Select,
-  Paper,
-} from "@mui/material";
+import { FormControl, MenuItem, InputLabel, Select, Box } from "@mui/material";
 import { useContext } from "react";
 import { searchContext } from "../store/CountriesContext";
 
@@ -16,13 +10,16 @@ export default function SelectionTab() {
   };
 
   return (
-    <Paper
+    <Box
       sx={{
+        boxShadow: "0px 0px 6   px 8px rgba(0,0,0,0.27)",
         minWidth: {
           xs: 150,
           lg: 200,
         },
-        maxWidth: "auto",
+        mr: {
+          lg: 4,
+        },
       }}
     >
       <FormControl fullWidth>
@@ -33,6 +30,7 @@ export default function SelectionTab() {
           label="Region"
           value={search}
           onChange={handleChange}
+          shrink={false}
         >
           <MenuItem value={"All"}>All</MenuItem>
           <MenuItem value={"Africa"}>Africa</MenuItem>
@@ -42,6 +40,6 @@ export default function SelectionTab() {
           <MenuItem value={"Oceania"}>Oceania</MenuItem>
         </Select>
       </FormControl>
-    </Paper>
+    </Box>
   );
 }
