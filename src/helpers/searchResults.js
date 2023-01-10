@@ -1,4 +1,5 @@
 export function getResults(countries, searchString) {
+  console.log(countries);
   if (!searchString) return countries;
 
   const countriesFiltered = countries.filter((country) => {
