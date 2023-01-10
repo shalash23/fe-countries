@@ -23,7 +23,7 @@ const MainPage = () => {
           alignItems: {
             lg: "center",
           },
-          mt: 3,
+          mt: 5,
         }}
       >
         <SearchBar />

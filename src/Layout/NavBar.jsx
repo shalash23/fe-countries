@@ -8,7 +8,7 @@ const NavBar = ({ lightMode, setLightMode, matches }) => {
       elevation={2}
       square
       sx={{
-        py: 5,
+        py: 2,
         px: {
           xs: 2,
           sm: 3,

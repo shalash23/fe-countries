@@ -18,6 +18,7 @@ const CardCountry = ({ name, population, flag, region, capital, area }) => {
         sx={{
           maxWidth: 350,
           minWidth: 235,
+          maxHeight: 350,
         }}
       >
         <CardMedia

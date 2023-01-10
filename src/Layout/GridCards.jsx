@@ -15,7 +15,7 @@ const GridCards = () => {
       spacing={8}
       sx={{
         mb: 5,
-        mt: 4,
+        mt: 2,
       }}
     >
       {randomCountries.map((country) => {

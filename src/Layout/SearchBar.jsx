@@ -1,4 +1,4 @@
-import { InputAdornment, Input, FormControl } from "@mui/material";
+import { InputAdornment, OutlinedInput, FormControl } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import { queryContext } from "../store/CountriesContext";
 import { useContext } from "react";
@@ -16,13 +16,17 @@ export default function SearchBar() {
         width: {
           xs: "100%",
           md: "40%",
+          backgroundColor: "primary.main",
         },
       }}
     >
-      <Input
+      <OutlinedInput
         id="input-search-country"
         placeholder="Search for a Country"
         onChange={handleChange}
+        sx={{
+          backgroundColor: "background.default",
+        }}
         startAdornment={
           <InputAdornment position="start">
             <SearchIcon
