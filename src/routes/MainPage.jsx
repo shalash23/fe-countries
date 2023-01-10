@@ -11,8 +11,6 @@ const MainPage = () => {
     <Container maxWidth={matches ? "xs" : false} fixed>
       <Box
         sx={{
-          px: 3,
-          overflow: "visible",
           display: {
             xs: "block",
             lg: "flex",
@@ -24,6 +22,7 @@ const MainPage = () => {
             lg: "center",
           },
           mt: 5,
+          mb: 4,
         }}
       >
         <SearchBar />
