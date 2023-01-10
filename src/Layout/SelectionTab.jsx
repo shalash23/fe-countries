@@ -18,7 +18,7 @@ export default function SelectionTab() {
           lg: 200,
         },
         mr: {
-          lg: 4,
+          lg: 1,
         },
       }}
     >
