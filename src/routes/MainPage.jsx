@@ -8,7 +8,7 @@ const MainPage = () => {
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down("md"));
   return (
-    <Container maxWidth={matches ? "xs" : false} fixed>
+    <Container maxWidth={matches ? "xs" : false} fixed disableGutters>
       <Box
         sx={{
           display: {

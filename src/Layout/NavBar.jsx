@@ -71,7 +71,7 @@ const NavBar = ({ lightMode, setLightMode, matches }) => {
             textTransform: "capitalize",
           }}
         >
-          {lightMode} Mode
+          {lightMode === "light" ? "Dark" : "Light"} Mode
         </Typography>
       </Box>
     </Paper>
