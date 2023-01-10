@@ -12,9 +12,10 @@ const GridCards = () => {
   return (
     <Grid
       container
-      spacing={6}
+      spacing={8}
       sx={{
         mb: 5,
+        mt: 4,
       }}
     >
       {randomCountries.map((country) => {

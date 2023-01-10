@@ -1,6 +1,7 @@
 import React from "react";
 import { Card, CardContent, Typography, CardMedia, Box } from "@mui/material";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const CardCountry = ({ name, population, flag, region, capital, area }) => {
   return (
@@ -11,17 +12,19 @@ const CardCountry = ({ name, population, flag, region, capital, area }) => {
       }}
     >
       <Card
+        component={motion.div}
+        elevation={5}
+        whileHover={{ scale: 1.02 }}
         sx={{
-          mt: 12,
-          maxWidth: 475,
-          minWidth: 275,
+          maxWidth: 350,
+          minWidth: 235,
         }}
       >
         <CardMedia
           title="Countrty Flag"
           image={flag}
           sx={{
-            height: 240,
+            height: 180,
           }}
         />
         <CardContent
@@ -32,7 +35,7 @@ const CardCountry = ({ name, population, flag, region, capital, area }) => {
           <Typography
             component="h2"
             noWrap
-            variant="h4"
+            variant="h5"
             sx={{
               fontWeight: "800",
               mb: 2,
@@ -50,7 +53,7 @@ const CardCountry = ({ name, population, flag, region, capital, area }) => {
           >
             <Typography
               component="p"
-              variant="h6"
+              variant="subtitle1"
               color="text.primary"
               sx={{
                 fontWeight: "300",
@@ -61,7 +64,7 @@ const CardCountry = ({ name, population, flag, region, capital, area }) => {
             </Typography>
             <Typography
               component="h3"
-              variant="h6"
+              variant="subtitle1"
               noWrap
               color="text.primary"
               sx={{ fontWeight: "300", opacity: "0.8" }}
@@ -78,7 +81,7 @@ const CardCountry = ({ name, population, flag, region, capital, area }) => {
           >
             <Typography
               component="p"
-              variant="h6"
+              variant="subtitle1"
               color="text.primary"
               sx={{
                 fontWeight: "300",
@@ -89,7 +92,7 @@ const CardCountry = ({ name, population, flag, region, capital, area }) => {
             </Typography>
             <Typography
               component="h3"
-              variant="h6"
+              variant="subtitle1"
               color="text.primary"
               sx={{ fontWeight: "300", opacity: "0.8" }}
               noWrap
@@ -106,7 +109,7 @@ const CardCountry = ({ name, population, flag, region, capital, area }) => {
           >
             <Typography
               component="h3"
-              variant="h6"
+              variant="subtitle1"
               color="text.primary"
               sx={{
                 fontWeight: "300",
@@ -117,7 +120,7 @@ const CardCountry = ({ name, population, flag, region, capital, area }) => {
             </Typography>
             <Typography
               component="p"
-              variant="h6"
+              variant="subtitle1"
               noWrap
               color="text.primary"
               sx={{ fontWeight: "300", opacity: "0.8" }}

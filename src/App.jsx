@@ -11,7 +11,7 @@ import NavBar from "./Layout/NavBar";
 import { CountriesContextProvider } from "./store/CountriesContext";
 import ScrollToTop from "./helpers/ScrollToTop";
 const App = () => {
-  const [lightMode, setLightMode] = React.useState("dark");
+  const [lightMode, setLightMode] = React.useState("light");
   const preferredTheme = themeOptions(lightMode);
   let theme = createTheme(preferredTheme);
   theme = responsiveFontSizes(theme);

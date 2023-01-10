@@ -21,7 +21,7 @@ export const themeOptions = (mode) => ({
             fontWeightRegular: 300,
             fontWeightMedium: 600,
             fontWeightBold: 800,
-            htmlFontSize: 16,
+            htmlFontSize: 12,
           },
         }
       : {
@@ -44,7 +44,7 @@ export const themeOptions = (mode) => ({
             fontWeightRegular: 300,
             fontWeightMedium: 600,
             fontWeightBold: 800,
-            htmlFontSize: 16,
+            htmlFontSize: 14,
           },
         }),
   },
